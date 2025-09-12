@@ -17,18 +17,19 @@ SinglyLinkedList/
 │-- main.cpp
 
 ---
-
 ## ⚙️ How to Run
-1. Clone this repo:
+1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/SinglyLinkedList.git
+   git clone https://github.com/Haris617/DSA-LinkedList.git
 
-   ## 📂 Folder Structure
-DSA-LinkedList/
-└── LinkedList/
-    ├── insert.cpp
-    ├── delete.cpp
-    ├── display.cpp
-    ├── main.cpp
+   cd DSA-LinkedList/LinkedList
+   
+g++ main.cpp -o linkedlist
+
+./linkedlist
+
+
+
+
 
 
