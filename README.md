@@ -10,7 +10,7 @@ Currently, it covers the following operations:
 ---
 
 ## 📂 Folder Structure
-SinglyLinkedList/
+LinkedList/
 └── LinkedList/
     ├── insert.cpp
     ├── delete.cpp
