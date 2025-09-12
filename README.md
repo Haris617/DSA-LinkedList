@@ -11,7 +11,8 @@ Currently, it covers the following operations:
 
 ## 📂 Folder Structure
 SinglyLinkedList/
-│-- insert.cpp
-│-- delete.cpp
-│-- display.cpp
-│-- main.cpp
+└── LinkedList/
+    ├── insert.cpp
+    ├── delete.cpp
+    ├── display.cpp
+    ├── main.cpp
