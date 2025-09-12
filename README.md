@@ -15,21 +15,3 @@ SinglyLinkedList/
 │-- delete.cpp
 │-- display.cpp
 │-- main.cpp
-
----
-## ⚙️ How to Run
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/Haris617/DSA-LinkedList.git
-
-   cd DSA-LinkedList/LinkedList
-   
-g++ main.cpp -o linkedlist
-
-./linkedlist
-
-
-
-
-
-
