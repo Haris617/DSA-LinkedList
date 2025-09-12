@@ -23,3 +23,12 @@ SinglyLinkedList/
    ```bash
    git clone https://github.com/your-username/SinglyLinkedList.git
 
+   ## 📂 Folder Structure
+DSA-LinkedList/
+└── LinkedList/
+    ├── insert.cpp
+    ├── delete.cpp
+    ├── display.cpp
+    ├── main.cpp
+
+
