@@ -10,6 +10,7 @@ Currently, it covers the following operations:
 ---
 
 ## 📂 Folder Structure
+```text
 LinkedList/
 └── LinkedList/
     ├── insert.cpp
