@@ -9,7 +9,7 @@ struct node {
 node* head = nullptr;
 node* tail = nullptr;
 
-void insertAtEnd(int val) // insert Node At End 
+void insertAtEnd(int val) //Insert Node at End
 {
 	node* n = new node;
 	n->data = val;
@@ -28,7 +28,7 @@ void insertAtEnd(int val) // insert Node At End
 	}
 }
 
-void insertAtStart(int val) // insert Node at Start
+void insertAtStart(int val) // insert Node At Start
 {
 	node* n = new node;
 	n->data = val;
@@ -44,9 +44,11 @@ void insertAtStart(int val) // insert Node at Start
 		n->next = head;
 		head = n;
 	}
+
+
 }
 
-void insertAtSpecificPosition(int position, int val) // Inserting Node at Specific Position
+void insertAtSpecificPosition(int position, int val) // insert Node at Specific Position
 {
 	node* n = new node;
 	n->data = val;
@@ -81,21 +83,4 @@ void insertAtSpecificPosition(int position, int val) // Inserting Node at Specif
 	{
 		tail = n;
 	}
-}
-
-int main()
-{
-  void display()
-{
-	node* temp = head;
-
-	while (temp != nullptr)
-	{
-		cout << "Data is : " << temp->data << endl;
-		temp = temp->next;
-	}
-}
-
-  
-  return 0;
 }
