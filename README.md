@@ -17,3 +17,20 @@ LinkedList/
     ├── delete.cpp
     ├── display.cpp
     ├── main.cpp
+
+
+---
+
+## ⚙️ Features Implemented
+- ✅ Insert at the **start**
+- ✅ Insert at the **end**
+- ✅ Insert at a **specific position**
+- ✅ Display the list
+- ✅ Count total nodes
+- ✅ Search for a value
+- ✅ Delete a node by value
+
+---
+
+
+
