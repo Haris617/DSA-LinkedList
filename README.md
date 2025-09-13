@@ -22,9 +22,9 @@ LinkedList/
 ---
 ```
 ## ⚙️ Features Implemented
-- ✅ Insert at the **start**
-- ✅ Insert at the **end**
-- ✅ Insert at a **specific position**
+- ✅ Insert Node at the **start**
+- ✅ Insert Node at the **end**
+- ✅ Insert Node at a **specific position**
 - ✅ Display the list
 - ✅ Count total nodes
 - ✅ Search for a value
