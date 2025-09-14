@@ -94,7 +94,15 @@ void countNodes()
 	if (head == nullptr)
 	{
 		cout << "Total Nodes : " << count << endl;
+		return;
 	}
+
+	if (head->next == nullptr)
+	{
+		count++;
+		return;
+	}
+
 
 	while (temp != nullptr)
 	{
@@ -134,18 +142,108 @@ void searchValue(int val)
 	cout << "Value not Found" << endl;
 }
 
+void deleteAtStart()
+{
+	node* temp = head;
+
+	if (head == nullptr)
+	{
+		cout << "link List Dont Exist" << endl;
+		return;
+	}
+
+	else if (head->next == nullptr)
+	{
+		delete head;
+		cout << "Node Successfully Deleted" << endl;
+		cout << "Link List is Empty Now " << endl;
+	}
+
+	else
+	{
+		head = head->next;
+		delete temp;
+
+		cout << "Node Successfully Deleted" << endl;
+	}
+}
+
+void deleteAtEnd() //Delete at The End if Tail Pointer Using
+{
+	node* temp = head;
+
+	if (head == nullptr)
+	{
+		cout << "Link List Doesnt Exist" << endl;
+		return;
+	}
+
+	else if (head->next == nullptr)
+	{
+		delete temp;
+		cout << "Node Sucessfully Deleted" << endl;
+		cout << "Link List is Empty Now" << endl;
+		return;
+
+	}
+
+	else
+	{
+		while (temp->next != tail)
+		{
+			temp = temp->next;
+		}
+
+		delete tail;
+		tail = temp;
+		tail->next = nullptr;
+
+	}
+}
+
+void deleteAtEndnHeadOnly() // Deleting Last Node Without Tail Pointer
+{
+	node* temp = head;
+
+	if (head == nullptr)
+	{
+		cout << "Link List Doesnt Exist" << endl;
+		return;
+	}
+
+	else if (head->next == nullptr)
+	{
+		delete temp;
+		cout << "Node Sucessfully Deleted" << endl;
+		cout << "Link List is Empty Now" << endl;
+		return;
+
+	}
+
+	while (temp->next->next != nullptr)
+	{
+		temp = temp->next;
+	}
+
+	delete temp->next;
+	temp->next = nullptr;
+}
+	
+
+
 
 int main()
 {
 
-	insertAtSpecificPosition(1, 20);
-	insertAtSpecificPosition(2, 30);
-	insertAtSpecificPosition(3, 40);
+	insertAtSpecificPosition(1, 10);
+	insertAtSpecificPosition(2, 20);
+	insertAtSpecificPosition(3, 30);
+	insertAtSpecificPosition(4, 40);
+	
 
-	searchValue(50);
-	searchValue(40);
 
-	countNodes(); 
+	deleteAtEndnHeadOnly();
+
 	display();
 
 
