@@ -13,9 +13,9 @@ Currently, it covers the following operations:
 ```text
 LinkedList/
 └── LinkedList/
-    ├── insert.cpp
     ├── delete.cpp
     ├── display.cpp
+    ├── insert.cpp
     ├── main.cpp
 
 
