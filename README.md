@@ -1,36 +1,17 @@
-# Singly Linked List Operations  
+# DSA-LinkedList
 
-This repository contains basic implementations of **Singly Linked List (SLL)** in C++.  
-Currently, it covers the following operations:  
-
-- Insert a node  
-- Delete a node  
-- Display the list  
+A collection of C++ implementations of **linked list data structures**.  
+Includes singly, doubly linked lists and common operations like insertion, deletion, traversal, and more.  
+Perfect for learning, interview prep, or just building up your DSA portfolio.
 
 ---
 
-## 📂 Folder Structure
-```text
-LinkedList/
-└── LinkedList/
-    ├── delete.cpp
-    ├── display.cpp
-    ├── insert.cpp
-    ├── main.cpp
+## 🔍 What’s Inside
 
+| Implementation Type | Operations Included |
+|---------------------|---------------------|
+| **Singly Linked List** | insert at start, insert at end, insert at specific position, delete, search, display, count, reverse |
+| **Doubly Linked List** | insert at start, insert at end, insert at specific position, display forward & backward |
+| **(Future)** | deletion, node reversal, circular linked list, etc. |
 
 ---
-```
-## ⚙️ Features Implemented
-- ✅ Insert Node at the **start**
-- ✅ Insert Node at the **end**
-- ✅ Insert Node at a **specific position**
-- ✅ Display the list
-- ✅ Count total nodes
-- ✅ Search for a value
-- ✅ Delete a node by value
-
----
-
-
-
