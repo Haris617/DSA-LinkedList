@@ -6,6 +6,7 @@ struct node {
     node* next;
 };
 
+
 node* head = nullptr;
 node* tail = nullptr;
 
