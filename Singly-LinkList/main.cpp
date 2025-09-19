@@ -6,66 +6,57 @@ struct node {
     node* next;
 };
 
-
 node* head = nullptr;
 node* tail = nullptr;
 
-void insertAtEnd(int val)
-{
+void insertAtEnd(int val) {
     node* n = new node;
     n->data = val;
     n->next = nullptr;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = n;
         tail = n;
     }
-    else
-    {
+    else {
         tail->next = n;
         tail = n;
     }
+    cout << "Inserted " << val << " at end" << endl;
 }
 
-void insertAtStart(int val)
-{
+void insertAtStart(int val) {
     node* n = new node;
     n->data = val;
     n->next = nullptr;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = tail = n;
     }
-    else
-    {
+    else {
         n->next = head;
         head = n;
     }
+    cout << "Inserted " << val << " at start" << endl;
 }
 
-void insertAtSpecificPosition(int position, int val)
-{
+void insertAtSpecificPosition(int position, int val) {
     node* n = new node;
     n->data = val;
     n->next = nullptr;
 
-    if (position == 1)
-    {
+    if (position == 1) {
         n->next = head;
         head = n;
         if (tail == nullptr) tail = n;
+        cout << "Inserted " << val << " at position 1" << endl;
         return;
     }
 
     node* previous = head;
-
-    for (int i = 1; i < position - 1; i++)
-    {
-        if (previous == nullptr)
-        {
-            cout << "Position Out Of Bound" << endl;
+    for (int i = 1; i < position - 1; i++) {
+        if (previous == nullptr) {
+            cout << "Position " << position << " is out of range" << endl;
             delete n;
             return;
         }
@@ -74,155 +65,158 @@ void insertAtSpecificPosition(int position, int val)
 
     n->next = previous->next;
     previous->next = n;
+    if (n->next == nullptr) tail = n;
 
-    if (n->next == nullptr)
-    {
-        tail = n;
-    }
+    cout << "Inserted " << val << " at position " << position << endl;
 }
 
-void countNodes()
-{
+void countNodes() {
     node* temp = head;
     int count = 0;
 
-    while (temp != nullptr)
-    {
+    while (temp != nullptr) {
         count++;
         temp = temp->next;
     }
-
-    cout << "Total Nodes : " << count << endl;
+    cout << "Total nodes: " << count << endl;
 }
 
-void display()
-{
+void display() {
     node* temp = head;
 
-    if (head == nullptr)
-    {
-        cout << "Link List is Empty" << endl;
+    if (head == nullptr) {
+        cout << "List is empty" << endl;
         return;
     }
 
-    while (temp != nullptr)
-    {
-        cout << "Data is : " << temp->data << endl;
+    cout << "List: ";
+    while (temp != nullptr) {
+        cout << temp->data;
+        if (temp->next != nullptr) cout << " -> ";
         temp = temp->next;
     }
+    cout << endl;
 }
 
-void searchValue(int val)
-{
+void searchValue(int val) {
     node* temp = head;
-
-    while (temp != nullptr)
-    {
-        if (val == temp->data)
-        {
-            cout << "Value Found" << endl;
+    while (temp != nullptr) {
+        if (val == temp->data) {
+            cout << "Value " << val << " found" << endl;
             return;
         }
         temp = temp->next;
     }
-
-    cout << "Value not Found" << endl;
+    cout << "Value " << val << " not found" << endl;
 }
 
-void deleteAtStart()
-{
-    node* temp = head;
-
-    if (head == nullptr)
-    {
-        cout << "link List Dont Exist" << endl;
+void deleteAtStart() {
+    if (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
         return;
     }
-    else if (head->next == nullptr)
-    {
+
+    node* temp = head;
+    cout << "Deleted " << temp->data << " from start" << endl;
+
+    if (head->next == nullptr) {
         delete head;
         head = tail = nullptr;
-        cout << "Node Successfully Deleted" << endl;
-        cout << "Link List is Empty Now " << endl;
-        return;
     }
-    else
-    {
+    else {
         head = head->next;
         delete temp;
-        cout << "Node Successfully Deleted" << endl;
     }
 }
 
-void deleteAtEnd()
-{
-    node* temp = head;
-
-    if (head == nullptr)
-    {
-        cout << "Link List Doesnt Exist" << endl;
+void deleteAtEnd() {
+    if (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
         return;
     }
-    else if (head->next == nullptr)
-    {
+
+    if (head->next == nullptr) {
+        cout << "Deleted " << head->data << " from end" << endl;
         delete head;
         head = tail = nullptr;
-        cout << "Node Sucessfully Deleted" << endl;
-        cout << "Link List is Empty Now" << endl;
         return;
     }
-    else
-    {
-        while (temp->next != tail)
-        {
-            temp = temp->next;
-        }
-        delete tail;
-        tail = temp;
-        tail->next = nullptr;
-        cout << "Last Node Successfully Deleted" << endl;
-    }
-}
 
-void deleteAtEndnHeadOnly()
-{
     node* temp = head;
-
-    if (head == nullptr)
-    {
-        cout << "Link List Doesnt Exist" << endl;
-        return;
-    }
-    else if (head->next == nullptr)
-    {
-        delete head;
-        head = tail = nullptr;
-        cout << "Node Sucessfully Deleted" << endl;
-        cout << "Link List is Empty Now" << endl;
-        return;
-    }
-
-    while (temp->next->next != nullptr)
-    {
+    while (temp->next != tail) {
         temp = temp->next;
     }
+    cout << "Deleted " << tail->data << " from end" << endl;
+    delete tail;
+    tail = temp;
+    tail->next = nullptr;
+}
 
+void deleteAtEndnHeadOnly() {
+    if (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
+        return;
+    }
+
+    if (head->next == nullptr) {
+        cout << "Deleted " << head->data << " (list is empty now)" << endl;
+        delete head;
+        head = tail = nullptr;
+        return;
+    }
+
+    node* temp = head;
+    while (temp->next->next != nullptr) {
+        temp = temp->next;
+    }
+    cout << "Deleted " << temp->next->data << " from end" << endl;
     delete temp->next;
     temp->next = nullptr;
     tail = temp;
 }
 
-int main()
-{
-    insertAtStart(10);
+void bubbleSort() {
+    if (!head) {
+        cout << "List does not exist" << endl;
+        return;
+    }
+
+    bool swapped;
+    do {
+        node* current = head;
+        swapped = false;
+        while (current->next != nullptr) {
+            if (current->data > current->next->data) {
+                int d = current->data;
+                current->data = current->next->data;
+                current->next->data = d;
+                swapped = true;
+            }
+            current = current->next;
+        }
+    } while (swapped);
+
+    cout << "List sorted using Bubble Sort" << endl;
+}
+
+int main() {
+    insertAtEnd(20);
+    insertAtEnd(10);
     insertAtEnd(30);
-    insertAtSpecificPosition(2, 20);
-
-    countNodes();
-
+    insertAtEnd(40);
     display();
 
-    searchValue(30);
+    bubbleSort();
+    display();
+
+    insertAtSpecificPosition(1, 5);
+    insertAtSpecificPosition(2, 14);
+    display();
+
+    insertAtStart(50);
+    insertAtStart(55);
+    insertAtStart(70);
+    display();
 
     deleteAtStart();
     display();
@@ -232,6 +226,11 @@ int main()
 
     deleteAtEndnHeadOnly();
     display();
+
+    countNodes();
+
+    searchValue(500);
+    searchValue(50);
 
     return 0;
 }
